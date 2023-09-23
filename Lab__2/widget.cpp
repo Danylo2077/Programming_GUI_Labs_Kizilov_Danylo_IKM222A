@@ -196,8 +196,8 @@ void Widget::convertCurrency()
 
     // Виконується конвертація і встановлюється результат у QLabel
     double convertedAmount = amount * rate;
-    QString resultStr = QString("Result: %1 %2").arg(convertedAmount).arg(toCurrency);
-    labelResult->setText(resultStr);
+    // Встановлюємо результат у QLabel разом із словом "Result:"
+    labelResult->setText(QString("Result: %1").arg(QString::number(convertedAmount)));
 }
 
 void Widget::clearFields()
